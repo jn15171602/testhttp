@@ -1,6 +1,6 @@
 [build]
   bin = "./tmp/main"
-  cmd = '''go build -o ./tmp/main .'''
+  cmd = '''go build -buildvcs=false -o ./tmp/main .'''
 
 # [proxy]
 #   # Enable live-reloading on the browser.

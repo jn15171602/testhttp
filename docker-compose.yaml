@@ -4,3 +4,5 @@ services:
     ports:
       - "8080:8080" # This dynamically assigns a host port to container port 8080
     restart: always
+    volumes:
+      - .:/app

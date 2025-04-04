@@ -1,4 +1,4 @@
-FROM golang:1.23
+FROM golang:latest
 
 # Get Go tools
 RUN go install github.com/air-verse/air@latest
