@@ -2,8 +2,8 @@
   bin = "./tmp/main"
   cmd = '''go build -buildvcs=false -o ./tmp/main .'''
 
-# [proxy]
-#   # Enable live-reloading on the browser.
-#   enabled = true
-#   proxy_port = 3001
-#   app_port = 3000
+[proxy]
+  # Enable live-reloading on the browser.
+  enabled = true
+  proxy_port = 8081
+  app_port = 8080
