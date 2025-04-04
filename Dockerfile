@@ -1,9 +1,13 @@
-FROM golang:latest
+FROM golang:1.23
+
+# Get Go tools
+RUN go install github.com/air-verse/air@latest
+
 WORKDIR /app
 COPY . .
 RUN go mod download
 
-# RUN CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -o /app/myapp
-RUN go build -o /app/myapp
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
-CMD ["/app/myapp"]
+CMD ["/docker-entrypoint.sh"]

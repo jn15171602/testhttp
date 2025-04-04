@@ -1,0 +1,9 @@
+[build]
+  bin = "./tmp/main"
+  cmd = '''go build -o ./tmp/main .'''
+
+# [proxy]
+#   # Enable live-reloading on the browser.
+#   enabled = true
+#   proxy_port = 3001
+#   app_port = 3000
