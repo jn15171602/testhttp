@@ -12,6 +12,9 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 
+	// fileServer := http.FileServer(http.Dir("./static"))
+	r.Handle("/*", http.StripPrefix("/", http.FileServer(http.Dir("./static"))))
+
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		views.View().Render(r.Context(), w)
 	})
