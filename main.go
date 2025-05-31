@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"example/hellohttp/views"
 	"net/http"
 
@@ -14,7 +13,7 @@ func main() {
 	r.Use(middleware.Logger)
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		views.View().Render(context.Background(), w)
+		views.View().Render(r.Context(), w)
 	})
 
 	http.ListenAndServe(":8080", r)
