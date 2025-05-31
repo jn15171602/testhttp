@@ -1,6 +1,8 @@
 package main
 
 import (
+	"context"
+	"example/hellohttp/views"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -12,7 +14,7 @@ func main() {
 	r.Use(middleware.Logger)
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("welcome"))
+		views.View().Render(context.Background(), w)
 	})
 
 	http.ListenAndServe(":8080", r)
