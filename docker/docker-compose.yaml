@@ -1,0 +1,27 @@
+services:
+  webserver-dev:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile.webserver-dev
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - ../:/app
+  tailwindcss:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile.tailwindcss
+    volumes:
+      - ../:/app
+    tty: true
+    command: >
+      -i ./input.css
+      -o ./static/css/style.css
+      --watch --poll
+  webserver-prod:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile.webserver-prod
+    ports:
+      - "8080:8080"

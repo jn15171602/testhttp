@@ -5,4 +5,4 @@
 
 # Live reloading
 
-To forego pressing F5 all the time, go to localhost:8081 instead of 8080 :-)
+To forego pressing F5 all the time, go to localhost:3001 instead of 3000 :-)

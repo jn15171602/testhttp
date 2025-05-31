@@ -1,0 +1,13 @@
+FROM golang:1.23
+
+RUN apt-get update && apt-get install -y git curl watchman btop
+
+# Get Go tools
+RUN go install github.com/air-verse/air@latest
+RUN go install github.com/a-h/templ/cmd/templ@latest
+
+WORKDIR /app
+
+RUN git config --global --add safe.directory /app
+
+CMD ["air"]

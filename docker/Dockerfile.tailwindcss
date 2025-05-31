@@ -1,0 +1,10 @@
+FROM debian:bullseye
+
+RUN apt-get update && apt-get install -y curl watchman && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+RUN curl -fsSL https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64 -o /usr/local/bin/tailwindcss \
+  && chmod +x /usr/local/bin/tailwindcss
+
+ENTRYPOINT ["/usr/local/bin/tailwindcss"]
