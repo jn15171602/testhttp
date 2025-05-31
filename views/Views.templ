@@ -5,7 +5,7 @@ templ Base(title string) {
 	<html lang="en">
 		<head>
 			<meta charset="UTF-8"/>
-			<title>Hello, world!</title>
+			<title>{ title }</title>
 			<meta name="viewport" content="width=device-width,initial-scale=1"/>
 			<meta name="description" content=""/>
 			<link rel="stylesheet" type="text/css" href="/css/style.css"/>
@@ -18,7 +18,7 @@ templ Base(title string) {
 }
 
 templ View() {
-	@Base("wewe lad") {
-		<div>asdfasdfasdf</div>
+	@Base("My Title") {
+		<div>content here</div>
 	}
 }
